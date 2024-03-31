@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tailwind",
+  title: "NetFlix Clone",
   description: "NextJs with the tailwind css",
 };
 
