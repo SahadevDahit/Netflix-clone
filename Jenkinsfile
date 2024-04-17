@@ -5,7 +5,7 @@ pipeline {
         PATH = "/opt/sonar-scanner/sonar-scanner-4.6.2.2472-linux/bin:$PATH"
         DOCKER_IMAGE_NAME = "dahitsahadev/netflix"
         DOCKER_IMAGE_TAG = "latest"
-        SONAR_HOST_URL = 'http://3.111.168.66:9000'
+        SONAR_HOST_URL = 'http://13.201.50.16:9000'
     }
     
     stages {
@@ -24,7 +24,7 @@ pipeline {
         stage('Remove Existing Docker Image') {
             steps {
                 // Remove the Docker image if it exists
-               sh 'docker rmi --force $(sudo docker images -a -q) || true'
+               sh 'docker rmi --force $(docker images -a -q) || true'
        }
         }
         stage('Build Docker Image') {
@@ -60,7 +60,7 @@ pipeline {
                         -Dsonar.projectKey=test \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=${SONAR_HOST_URL} \
-                        -Dsonar.login=sqp_06a175a267421a6393fa2fb5e61c2fa70b67cc91
+                        -Dsonar.login=sqp_c22180e3838e3476cd709bec84c0fcdd58dcd7f7
                     """
                 }
             }
