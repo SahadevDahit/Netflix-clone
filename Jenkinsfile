@@ -24,7 +24,7 @@ pipeline {
         stage('Remove Existing Docker Image') {
             steps {
                 // Remove the Docker image if it exists
-               sh 'docker rmi --force $(sudo docker images -a -q) || true'
+               sh 'docker rmi --force $(docker images -a -q) || true'
        }
         }
         stage('Build Docker Image') {
