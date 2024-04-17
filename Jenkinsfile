@@ -5,7 +5,7 @@ pipeline {
         PATH = "/opt/sonar-scanner/sonar-scanner-4.6.2.2472-linux/bin:$PATH"
         DOCKER_IMAGE_NAME = "dahitsahadev/netflix"
         DOCKER_IMAGE_TAG = "latest"
-        SONAR_HOST_URL = 'http://13.201.30.82:9000'
+        SONAR_HOST_URL = 'http://3.111.168.66:9000'
     }
     
     stages {
@@ -60,7 +60,7 @@ pipeline {
                         -Dsonar.projectKey=test \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=${SONAR_HOST_URL} \
-                        -Dsonar.login=sqp_140636a647f2fc44f38874b01190126f2c0e5f1d
+                        -Dsonar.login=sqp_06a175a267421a6393fa2fb5e61c2fa70b67cc91
                     """
                 }
             }
