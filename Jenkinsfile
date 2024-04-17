@@ -24,14 +24,14 @@ pipeline {
         stage('Remove Existing Docker Image') {
             steps {
                 // Remove the Docker image if it exists
-               sh 'sudo docker rmi --force $(sudo docker images -a -q) || true'
+               sh 'docker rmi --force $(sudo docker images -a -q) || true'
        }
         }
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
                 script {
-                    sh "sudo docker build --rm -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
                 }
             }
         }
